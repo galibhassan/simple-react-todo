@@ -21,7 +21,7 @@ class TodoApp extends React.Component {
   addChoresToState = () => {
     const txtInput = document.getElementById('txtInput');
     console.log(txtInput.value)
-    this.setState((prevState)=>{
+    this.setState((prevState) => {
       prevState.todoList.push(txtInput.value);
       txtInput.value = '';
       return prevState;
@@ -31,9 +31,9 @@ class TodoApp extends React.Component {
   handleOnClick = () => {
     this.addChoresToState()
   }
-  
+
   handleKeyDown = (event) => {
-    if(event.key==='Enter') {
+    if (event.key === 'Enter') {
       this.addChoresToState()
     }
   }
@@ -44,7 +44,7 @@ class TodoApp extends React.Component {
         <h3>ToDo's</h3>
         <input id='txtInput' type='text' placeholder='enter..' onKeyDown={this.handleKeyDown}></input>
         <button onClick={this.handleOnClick}>+</button>
-        <ToDoList mainState={this.state} removeDone={this.removeDone}/>
+        <ToDoList mainState={this.state} removeDone={this.removeDone} />
       </div>
     )
   }

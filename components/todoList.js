@@ -2,7 +2,7 @@ import React from 'react'
 
 class ToDoList extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props)
     this.handleOnclick = this.handleOnclick.bind(this)
   }
@@ -18,7 +18,7 @@ class ToDoList extends React.Component {
           {(this.props.mainState.todoList).map((item, index) => {
             return (
               <li key={index} style={styles.listItem}>
-                <button style={styles.xButton} onClick={()=>{this.props.removeDone(index)}} > X </button>
+                <button style={styles.xButton} onClick={() => { this.props.removeDone(index) }} > X </button>
                 <p>{item}</p>
               </li>
             )
@@ -37,14 +37,14 @@ const styles = {
     padding: 10,
     margin: 5,
     listStyleType: 'none',
-    width:'30%',
+    width: '30%',
     borderRadius: 5
   },
   xButton: {
     border: 'none',
     backgroundColor: 'pink',
     padding: 10,
-    marginRight: 3, 
+    marginRight: 3,
     cursor: 'pointer',
     color: 'white',
     float: 'right',
